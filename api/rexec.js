@@ -8,6 +8,9 @@ import {
 const { EngageCore } = require("@xpertana/engage-core");
 const cev = require("@xpertana/engage-lib-cev");
 
+// the "client" in this case is the server. make sense? ;-)
+const flows = require("../flc/client");
+
 async function fn(req, res) {
   try {
     if (req.method === "OPTIONS") {
@@ -16,25 +19,26 @@ async function fn(req, res) {
 
     // EXTRACT PARAMS
     const {
-      headers: { authorization }
+      headers: { authorization },
+      body: { ctx }
     } = req;
 
     // AUTHORIZATION START
-    if (!authorization) return res.json({ error: "not authorized" });
-    const token = authorization.substring(6).trim();
-    const result = await verifyEndpointToken(token);
+    // if (!authorization) return res.json({ error: "not authorized" });
+    // const token = authorization.substring(6).trim();
+    // const result = await verifyEndpointToken(token);
     // res.json(result);
     // AUTHORIZATION END
 
-    // INSTANTIATE SERVER START
-    const E = new EngageCore({
-      flows: null,
-      ctx
-    });
+    //INSTANTIATE SERVER START
+    const E = new EngageCore();
 
+    E.CTX.CTX = ctx;
     await E.evaluate();
+
     res.json({
-      version: E.version()
+      version: E.version(),
+      ctx: E.CTX.CTX
     });
     // INSTANTIATE SERVER END
   } catch (e) {

@@ -1,0 +1,5 @@
+require foo
+set bar to 5
+return
+
+

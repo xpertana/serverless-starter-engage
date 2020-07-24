@@ -1,2 +1,2 @@
 #!/bin/sh
-now dev --listen 6406
+now dev --listen 6464

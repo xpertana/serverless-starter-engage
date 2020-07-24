@@ -1,0 +1,10 @@
+
+@dev = http://127.0.0.1:6464
+
+#
+# EXEC
+# 
+### CREATE ENDPOINT TOKEN
+GET {{dev}}/api/ping HTTP/1.1
+content-type: application/json
+
