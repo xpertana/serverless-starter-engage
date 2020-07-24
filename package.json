@@ -1,12 +1,15 @@
 {
-  "name": "@xpertana/engage-auth-service",
+  "name": "@xpertana/serverless-starter-engage",
   "private": true,
   "version": "0.0.2",
-  "description": "Engage Auth Service",
+  "description": "Engage Serverless Starter",
   "main": "index.js",
   "author": "Glenn Schleicher",
   "license": "ISC",
   "dependencies": {
+    "@xpertana/engage-core": "^0.7.25",
+    "@xpertana/engage-environments": "^0.5.8",
+    "@xpertana/engage-lib-cev": "^0.4.3",
     "@xpertana/xpejwt": "^0.1.9",
     "debug": "^4.1.1",
     "micro-cors": "^0.1.1"
