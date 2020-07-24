@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "public": false,
+  "build": {
+    "env": {
+      "NPM_TOKEN": "@npm_token"
+    }
+  },
+  "env": {
+    "TOKEN": "xxx"
+  }
+}

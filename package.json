@@ -1,0 +1,19 @@
+{
+  "name": "@xpertana/engage-auth-service",
+  "private": true,
+  "version": "0.0.2",
+  "description": "Engage Auth Service",
+  "main": "index.js",
+  "author": "Glenn Schleicher",
+  "license": "ISC",
+  "dependencies": {
+    "@xpertana/xpejwt": "^0.1.9",
+    "debug": "^4.1.1",
+    "micro-cors": "^0.1.1"
+  },
+  "devDependencies": {
+    "boxen": "^4.2.0",
+    "chalk": "^4.0.0",
+    "clear": "^0.1.0"
+  }
+}
