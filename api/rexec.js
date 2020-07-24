@@ -20,7 +20,7 @@ async function fn(req, res) {
     // EXTRACT PARAMS
     const {
       headers: { authorization },
-      body: { ctx }
+      body: { run, encnode, ctx }
     } = req;
 
     // AUTHORIZATION START
@@ -31,14 +31,29 @@ async function fn(req, res) {
     // AUTHORIZATION END
 
     //INSTANTIATE SERVER START
-    const E = new EngageCore();
+    const E = new EngageCore({ flows, ctx });
 
-    E.CTX.CTX = ctx;
+    // ENCRYPTED NODE PROCESSING IF WE HAVE ONE
+    if (encnode) {
+      const { value, error } = cev.reveal({ cev: encnode });
+      if (error) res.json({ error });
+      console.log(`mounted encrypted node ${value.i} into flow dir`);
+      // console.log(value);
+      E.N[value.i] = value;
+    }
+
+    // SEE IF WE HAVE THE SPECIFIED FLOW
+    if (!E.N[run]) return res.json({ error: `flow ${run} not found` });
+
+    //E.CTX.CTX = ctx;
+    await E.opEval.go([7, { "40": 1, flow: run }]);
     await E.evaluate();
 
     res.json({
+      // flows: E.N,
       version: E.version(),
-      ctx: E.CTX.CTX
+      ctx: E.CTX.CTX,
+      output: E.getOutput()
     });
     // INSTANTIATE SERVER END
   } catch (e) {

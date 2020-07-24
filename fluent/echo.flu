@@ -1,5 +1,8 @@
-require foo
+
+debug "foo is {foo}"
+
 set bar to 5
-return
+set gerp to "hello"
+
 
 

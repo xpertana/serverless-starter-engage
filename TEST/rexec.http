@@ -4,16 +4,44 @@
 @usertoken = eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiIsImtpZCI6ImszIn0.eyJpc3MiOiJodHRwczovL3hwZXJ0YW5hLmNvbS9lbmdhZ2UiLCJhdWQiOlsiZW5nYWdlc2VydmVyIiwiZW5nYWdlYXBpIl0sInR5cCI6InVzZXIiLCJzdWIiOiJkaWQ6ZXRocjoweDc5NEVlM2Q5Y0RDNDQ1MzExZTY0NDcxY0E5YTVmMEE1RjZjYjE3OGEiLCJlbWFpbCI6ImdzY2hsZWljQGdtYWlsLmNvbSIsInB1YmxpYyI6IjB4Nzk0RWUzZDljREM0NDUzMTFlNjQ0NzFjQTlhNWYwQTVGNmNiMTc4YSIsImp0aSI6IjUzYjI3NWYxLTllODItNDJhNy1iZmIwLTJhM2IxYmYzZjBjOSIsImlhdCI6MTU4ODYzMDYzMCwiZXhwIjoyMTkzNDMwNjMwfQ.XYXc7oXkLQQqu0mUL5T56zQ5muC2A78mDtsUK8eMD0E
 @eptoken = eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiIsImtpZCI6ImsyIn0.eyJpc3MiOiJodHRwczovL3hwZXJ0YW5hLmNvbS9lbmdhZ2UiLCJhdWQiOlsiZW5nYWdlc2VydmVyIiwiZW5nYWdlYXBpIl0sInR5cCI6ImVuZHBvaW50Iiwic3ViIjoieHBlcHxjazl0NjFnMzQwMDAwMDhsMTRxdDZidDdwIiwianRpIjoiMzcyNDg1MjMtOGM3MS00Nzg5LTgwZjgtNWRhY2MxNjg2MzFkIiwiaWF0IjoxNTg4NjM3OTg3fQ.2sxIcLQg-uhZAJr6An0rBaTxkOVI2eITrfjY0xoysPE
 
+@encnode = U2FsdfGVkX1/326WHZuKD9GVqclJgHLlu/OS0mAibzDVJjQrbN5qpZAEmVqG7is7PAV6cuSVTuXVRDX4EV8h9mEIwwESdh2zpuA3AZLyOqKww1hqFGJnmy9zfI1gWJmTeW5YDd2KcIEEkvOb5FG+negtvfa+jyCUi8tds3XSumvrk+NuFuSRUiatplyoqgRBCYXfLQn0oTPqreCp4OJrmjSdTNoFab7vgTz/OQDr3V9WKzgYwmcoTnqLXPBvRkbBsnc
+
 #
 # EXEC
 # 
-### CREATE ENDPOINT TOKEN
+### RUN ENCNODE
 POST {{dev}}/api/rexec HTTP/1.1
 content-type: application/json
 Authorization: Bearer {{eptoken}}
 
 {
+  "run": "_echo",
+  "encnode": "{{encnode}}",
   "ctx": {
     "foo":4
   }
 }
+
+### RUN BUILTIN
+POST {{dev}}/api/rexec HTTP/1.1
+content-type: application/json
+Authorization: Bearer {{eptoken}}
+
+{
+  "run": "_echo",
+  "ctx": {
+    "foo":4
+  }
+}
+
+### RUN ENCNODE
+POST {{dev}}/api/rexec HTTP/1.1
+content-type: application/json
+Authorization: Bearer {{eptoken}}
+
+{
+  "run": "_servertime",
+  "ctx": {}
+}
+
+
