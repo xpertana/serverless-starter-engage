@@ -9,7 +9,6 @@
   "scripts": {},
   "dependencies": {
     "@xpertana/engage-core": "^0.7.29",
-    "@xpertana/engage-environments": "^0.5.8",
     "@xpertana/engage-lib-cev": "^0.4.3",
     "@xpertana/xpejwt": "^0.1.9",
     "debug": "^4.1.1",
