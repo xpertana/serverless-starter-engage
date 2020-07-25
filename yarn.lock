@@ -393,14 +393,14 @@
     parse-address "^1.1.2"
     phone "^2.4.3"
 
-"@xpertana/engage-core@^0.7.29":
-  version "0.7.29"
-  resolved "https://registry.yarnpkg.com/@xpertana/engage-core/-/engage-core-0.7.29.tgz#563ea555b0a2a741345333f34cb10fdcd9576b5c"
-  integrity sha512-kPivLnk32zAIdVFZAU7FXXormxGxu/zpE5vS/Q7b/GhaBGhxCSq6izPjJJaGATHDJgQ668I35eF4jw+ZchjYxQ==
+"@xpertana/engage-core@^0.7.30":
+  version "0.7.30"
+  resolved "https://registry.yarnpkg.com/@xpertana/engage-core/-/engage-core-0.7.30.tgz#c3d91e31b608af3bc314a1614afbdedc9eb28e3d"
+  integrity sha512-QXGs0CAxSFz8xyjJfYnLJbXbjL4bDtxIaZMJP2RHtm8fj5MBkB4hk7A9mDaBbFkbAGkBNt6XUpoviIxIpLaqtw==
   dependencies:
     "@auth0/auth0-spa-js" "^1.6.4"
     "@xpertana/ctxmanager" "^0.6.20"
-    "@xpertana/engage-driver-server-http" "^0.7.14"
+    "@xpertana/engage-driver-server-http" "^0.7.16"
     "@xpertana/engage-environments" "^0.5.6"
     "@xpertana/engage-forward-dict" "^0.7.37"
     "@xpertana/engage-net-socket" "^0.6.8"
@@ -425,17 +425,23 @@
     superagent "^5.1.0"
     utf-8-validate "^5.0.2"
 
-"@xpertana/engage-driver-server-http@^0.7.14":
-  version "0.7.14"
-  resolved "https://registry.yarnpkg.com/@xpertana/engage-driver-server-http/-/engage-driver-server-http-0.7.14.tgz#a7f72b1a24d897428b005adc83a9e021349fab78"
-  integrity sha512-5GwklyXKLykAGAmyRLUo+cDUdr8fw22sQEZBhvHUIowI5oBL7Q3UUMCZnOosbakzv0IlCUgAejbsyoWpalOoDA==
+"@xpertana/engage-driver-server-http@^0.7.16":
+  version "0.7.16"
+  resolved "https://registry.yarnpkg.com/@xpertana/engage-driver-server-http/-/engage-driver-server-http-0.7.16.tgz#94f60f0709bf831bd5cde81fa6388baf5e601b58"
+  integrity sha512-zOLdNG1308lUsnQfhdAygMcvgOMmcsjK/qh0QlcrO+ZhhtZ0mM0o4B0yE/3my/1exG2pCh2o2a3PNseT28Qt6w==
   dependencies:
+    "@xpertana/engage-environments" "^0.5.9"
     axios "^0.19.0"
 
-"@xpertana/engage-environments@^0.5.6", "@xpertana/engage-environments@^0.5.8":
+"@xpertana/engage-environments@^0.5.6":
   version "0.5.8"
   resolved "https://registry.yarnpkg.com/@xpertana/engage-environments/-/engage-environments-0.5.8.tgz#8b055163c9aebc9c8798e6e761707e860264d24a"
   integrity sha512-Wx83otsPmZAnhWBBni1Y1VtmlHOhXdFJgtDQTMo1u+CYwipTXA6WOKmjBbrCYtZVxVWkiOmpL4Gei87K9Cg2sQ==
+
+"@xpertana/engage-environments@^0.5.9":
+  version "0.5.9"
+  resolved "https://registry.yarnpkg.com/@xpertana/engage-environments/-/engage-environments-0.5.9.tgz#49f53808030037a1cbfa1158559a963c2c19a7e5"
+  integrity sha512-kzGNHIn109nU/X6XJLVr7LYO3Arv4cHyql9d8QcvojXbpauB17yxMj11vtfenDQ9q93xszQT/BRtSc/SrwzM4w==
 
 "@xpertana/engage-forward-dict@^0.7.37":
   version "0.7.37"
